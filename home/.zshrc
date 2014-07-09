@@ -13,6 +13,11 @@ ZSH_THEME="ys"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias sagu1="sudo apt-get update"
+alias sagu2="sudo apt-get upgrade"
+alias sagu3="sudo apt-get dist-upgrade"
+alias pua="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
