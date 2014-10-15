@@ -16,6 +16,7 @@ ZSH_THEME="ys"
 alias sagu1="sudo apt-get update"
 alias sagu2="sudo apt-get upgrade"
 alias sagu3="sudo apt-get dist-upgrade"
+alias sagu4="sudo apt-get update && sudo apt-get dist-upgrade -y"
 alias pua="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
 
 # Uncomment the following line to use case-sensitive completion.
