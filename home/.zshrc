@@ -18,7 +18,7 @@ alias sagu2="sudo apt-get upgrade"
 alias sagu3="sudo apt-get dist-upgrade"
 alias sagu4="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y"
 alias pua="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
-
+alias svh="sudo vim /etc/hosts"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -56,7 +56,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git virtualenvwrapper pip npm composer command-not-found mercurial)
+plugins=(git virtualenvwrapper pip npm composer command-not-found mercurial vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,3 +84,5 @@ export PATH="/home/rdeknijf/venvs/amur3/bin:/usr/local/sbin:/usr/local/bin:/usr/
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
