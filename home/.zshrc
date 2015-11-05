@@ -19,6 +19,8 @@ alias sagu3="sudo apt-get dist-upgrade"
 alias sagu4="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y"
 alias pua="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
 alias svh="sudo vim /etc/hosts"
+alias srx="ssh -t $(xclip -out -selection clipboard) 'sudo su -'"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
