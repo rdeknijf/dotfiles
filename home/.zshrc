@@ -61,6 +61,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git virtualenvwrapper pip npm composer command-not-found mercurial vagrant)
 
 source $ZSH/oh-my-zsh.sh
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # User configuration
 
