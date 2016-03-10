@@ -3,3 +3,5 @@
 	name = Rutger de Knijf
 [push]
 	default = simple
+[core]
+	autocrlf = input
