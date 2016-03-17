@@ -22,6 +22,8 @@ alias pua="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip inst
 alias svh="sudo vim /etc/hosts"
 alias srx="ssh -t $(xclip -out -selection clipboard) 'sudo su -'"
 alias ansible-this='sudo ansible-playbook ~/Dropbox/Cloud/ansible/$(hostname | tr "[:upper:]" "[:lower:]").yml'
+alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
