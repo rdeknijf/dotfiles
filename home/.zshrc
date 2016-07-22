@@ -24,6 +24,7 @@ alias srx="ssh -t $(xclip -out -selection clipboard) 'sudo su -'"
 alias ansible-this='sudo ansible-playbook ~/Dropbox/Cloud/ansible/$(hostname | tr "[:upper:]" "[:lower:]").yml'
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias "vagrant-rebuild"='vagrant destroy -f; vagrant up'
+alias "ssh-add-wd"="ssh-add ~/.ssh/id_rsa ~/.ssh/id_rsa_dragon"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
