@@ -25,6 +25,7 @@ alias ansible-this='sudo ansible-playbook ~/Dropbox/Cloud/ansible/$(hostname | t
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias "vagrant-rebuild"='vagrant destroy -f; vagrant up'
 alias "ssh-add-wd"="ssh-add ~/.ssh/id_rsa ~/.ssh/id_rsa_dragon"
+alias "ansible-galaxy-update"="rm -rf ./deploy/ansible/roles-vendor; ansible-galaxy install -r ./deploy/ansible/requirements.yml"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
