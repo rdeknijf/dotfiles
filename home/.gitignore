@@ -1,3 +1,7 @@
 .idea
 .vagrant
 *.retry
+.sonar
+*.pyc
+*.iml
+.sonar_lock
