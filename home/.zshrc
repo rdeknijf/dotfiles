@@ -22,6 +22,7 @@ alias pua="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip inst
 alias svh="sudo vim /etc/hosts"
 alias srx="ssh -t $(xclip -out -selection clipboard) 'sudo su -'"
 alias ansible-this='sudo ansible-playbook ~/Dropbox/Cloud/ansible/$(hostname | tr "[:upper:]" "[:lower:]").yml'
+alias ansible-all='sudo ansible-playbook ~/Dropbox/Cloud/ansible/all.yml'
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias "vagrant-rebuild"='vagrant destroy -f; vagrant up'
 alias "ssh-add-wd"="ssh-add ~/.ssh/id_rsa ~/.ssh/id_rsa_dragon"
