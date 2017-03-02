@@ -7,3 +7,5 @@
 .sonar_lock
 *.log
 .cache
+*.terrible-vars.yml
+*.terrible
