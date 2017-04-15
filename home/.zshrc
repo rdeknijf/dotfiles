@@ -21,8 +21,8 @@ alias sagu4="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get
 alias pua="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
 alias svh="sudo vim /etc/hosts"
 #alias srx="ssh -t $(xclip -out -selection clipboard) 'sudo su -'"
-alias ansible-this='sudo ansible-playbook ~/Dropbox/Cloud/ansible/$(hostname | tr "[:upper:]" "[:lower:]").yml'
-alias ansible-all='sudo ansible-playbook ~/Dropbox/Cloud/ansible/all.yml'
+alias ansible-this='ansible-playbook ~/Dropbox/Cloud/ansible/$(hostname | tr "[:upper:]" "[:lower:]").yml'
+alias ansible-all='ansible-playbook ~/Dropbox/Cloud/ansible/all.yml'
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias "vagrant-rebuild"='vagrant destroy -f; vagrant up'
 alias "ssh-add-wd"="ssh-add ~/.ssh/id_rsa ~/.ssh/id_rsa_dragon"
