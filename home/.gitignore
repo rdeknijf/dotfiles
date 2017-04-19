@@ -9,3 +9,5 @@
 .cache
 *.terrible-vars.yml
 *.terrible
+scratch.py
+node_modules
