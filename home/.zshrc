@@ -26,6 +26,7 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
+export DISABLE_VENV_CD=1
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(git virtualenvwrapper pip npm composer command-not-found vagrant ubuntu tmux extract dirpersist history docker redis-cli python colorizei ssh-agent aws)
 
@@ -43,3 +44,6 @@ fi
 export PATH="$PATH:$HOME/opt/terraform"
 export PATH="$PATH:/opt/sonar-scanner/bin"
 export PATH="$PATH:$HOME/gowork/bin"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
