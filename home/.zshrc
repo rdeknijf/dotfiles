@@ -28,7 +28,7 @@ COMPLETION_WAITING_DOTS="true"
 
 export DISABLE_VENV_CD=1
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git virtualenvwrapper pip npm composer command-not-found vagrant ubuntu tmux extract dirpersist history docker redis-cli python colorizei ssh-agent aws)
+plugins=(git virtualenvwrapper pip npm composer command-not-found vagrant ubuntu tmux extract dirpersist history docker redis-cli python colorizei ssh-agent aws terraform)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
