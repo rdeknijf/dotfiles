@@ -41,9 +41,6 @@ if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
 
-export PATH="$PATH:$HOME/opt/terraform"
-export PATH="$PATH:/opt/sonar-scanner/bin"
-export PATH="$PATH:$HOME/gowork/bin"
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f ~/.path ] && source ~/.path
