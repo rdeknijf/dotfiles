@@ -4,6 +4,10 @@ export WORKON_HOME=$HOME/.virtualenvs
 
 ZSH_THEME="ys"
 
+bindkey '^[[C' forward-word
+bindkey '^[[D' backward-word
+bindkey '^H' backward-kill-word
+
 alias sagu1="sudo apt-get update"
 alias sagu2="sudo apt-get upgrade"
 alias sagu3="sudo apt-get dist-upgrade"
