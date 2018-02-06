@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 
 export DISABLE_VENV_CD=1
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git virtualenvwrapper pip npm composer command-not-found vagrant ubuntu tmux extract dirpersist history docker redis-cli python colorizei ssh-agent aws terraform)
+plugins=(git virtualenvwrapper pip npm composer command-not-found vagrant ubuntu tmux extract dirpersist history docker redis-cli python colorizei ssh-agent aws terraform kubectl)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
@@ -46,5 +46,9 @@ if [[ ! $TERM =~ screen ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ $commands[minikube] ]; then
+  source <(minikube completion zsh)
+fi
 
 [ -f ~/.path ] && source ~/.path
