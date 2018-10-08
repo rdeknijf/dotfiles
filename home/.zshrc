@@ -19,8 +19,9 @@ alias ansible-this='ansible-playbook ~/Dropbox/Cloud/ansible/$(hostname | tr "[:
 alias ansible-all='ansible-playbook ~/Dropbox/Cloud/ansible/all.yml'
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias "vagrant-rebuild"='vagrant destroy -f; vagrant up'
-alias "ssh-add-wd"="ssh-add ~/.ssh/id_rsa ~/.ssh/id_rsa_dragon"
+alias "ssh-add-wd"='ssh-add ~/.ssh/id_rsa ~/.ssh/id_rsa_dragon'
 alias "ansible-galaxy-update"="rm -rf ./deploy/ansible/roles-vendor; ansible-galaxy install -r ./deploy/ansible/requirements.yml"
+alias krja='kubectl exec $(kubectl get pods --field-selector status.phase==Running --output jsonpath="{.items[0].metadata.name}" --selector jenkins=slave -n default) -n default -it /bin/bash'
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
