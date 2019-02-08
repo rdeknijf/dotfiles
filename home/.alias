@@ -1,0 +1,14 @@
+alias sagu1="sudo apt-get update"
+alias sagu2="sudo apt-get upgrade"
+alias sagu3="sudo apt-get dist-upgrade"
+alias sagu4="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y"
+alias pua="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+alias svh="sudo vim /etc/hosts"
+#alias srx="ssh -t $(xclip -out -selection clipboard) 'sudo su -'"
+alias ansible-this='ansible-playbook ~/Dropbox/Cloud/ansible/$(hostname | tr "[:upper:]" "[:lower:]").yml'
+alias ansible-all='ansible-playbook ~/Dropbox/Cloud/ansible/all.yml'
+alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias "vagrant-rebuild"='vagrant destroy -f; vagrant up'
+alias "ssh-add-wd"='ssh-add ~/.ssh/id_rsa ~/.ssh/id_rsa_dragon'
+alias "ansible-galaxy-update"="rm -rf ./deploy/ansible/roles-vendor; ansible-galaxy install -r ./deploy/ansible/requirements.yml"
+alias krja='kubectl exec $(kubectl get pods --field-selector status.phase==Running --output jsonpath="{.items[0].metadata.name}" --selector jenkins=slave -n default) -n default -it /bin/bash'
