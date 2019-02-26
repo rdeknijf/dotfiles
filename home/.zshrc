@@ -3,7 +3,8 @@ export EDITOR=vim
 export WORKON_HOME=$HOME/.virtualenvs
 export DISABLE_VENV_CD=1
 export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
-
+export KUBECTX_IGNORE_FZF=1  # tmp fix until https://github.com/junegunn/fzf/issues/1486 is merged
+ 
 # display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
