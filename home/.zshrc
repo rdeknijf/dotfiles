@@ -34,6 +34,8 @@ zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "robbyrussell/oh-my-zsh"
 zplug "themes/ys", from:oh-my-zsh
 
+zplug "robbyrussell/oh-my-zsh", as:plugin, use:"lib/*.zsh"
+
 zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/virtualenvwrapper", from:oh-my-zsh
