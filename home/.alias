@@ -13,3 +13,7 @@ alias "vagrant-rebuild"='vagrant destroy -f; vagrant up'
 alias "ssh-add-wd"='ssh-add ~/.ssh/id_rsa ~/.ssh/id_rsa_dragon'
 alias "ansible-galaxy-update"="rm -rf ./deploy/ansible/roles-vendor; ansible-galaxy install -r ./deploy/ansible/requirements.yml"
 alias krja='kubectl exec $(kubectl get pods --field-selector status.phase==Running --output jsonpath="{.items[0].metadata.name}" --selector jenkins=slave -n devops) -n devops -it /bin/bash'
+alias o="cd ~/kk/orca && workon orca"
+
+alias odb_snapshot="sudo rsync -av --no-compress /var/lib/docker/volumes/orca_orca_postgres /mnt/harad/docker_volume_snapshots"
+alias odb_restore="sudo rsync -av --no-compress /mnt/harad/docker_volume_snapshots/orca_orca_postgres /var/lib/docker/volumes"
