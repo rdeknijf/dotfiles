@@ -59,12 +59,15 @@ zplug "plugins/systemd", from:oh-my-zsh
 zplug "plugins/web-search", from:oh-my-zsh
 zplug "plugins/ansible", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/zsh-autosuggestions", from:oh-my-zsh
 #zplug "plugins/npm", from:oh-my-zsh
 
 zplug "superbrothers/zsh-kubectl-prompt"
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "pinelibg/dircolors-solarized-zsh"
+
+zplug "lukechilds/zsh-nvm"
 
 # auto-install zplugs
 if ! zplug check --verbose; then
