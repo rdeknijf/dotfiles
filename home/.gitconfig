@@ -1,9 +1,21 @@
 [user]
 	email = rutger@deknijf.com
 	name = Rutger de Knijf
+	signingkey = C9579456375E704F
+
+[includeIf "gitdir:~/ewx/**"]
+	path = /home/rdeknijf/ewx/.gitconfig
+
+[includeIf "gitdir:energyworx/"]
+	path = /home/rdeknijf/ewx/.gitconfig
+
 [push]
 	default = simple
 [core]
 	filemode = false
 	autocrlf = input
 	excludesfile = ~/.gitignore
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
