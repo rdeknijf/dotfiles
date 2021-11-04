@@ -17,5 +17,5 @@ alias o="cd ~/kk/orca && workon orca"
 
 alias odb_snapshot="sudo rsync -av --no-compress /var/lib/docker/volumes/orca_orca_postgres /mnt/harad/docker_volume_snapshots"
 alias odb_restore="sudo rsync -av --no-compress /mnt/harad/docker_volume_snapshots/orca_orca_postgres /var/lib/docker/volumes"
-alias k9sr="k9s --context resilience"
-alias k9sp="k9s --context polaris"
+alias k9sr="k9s --context gke_orca-205614_europe-west1_resilience"
+alias k9sp="k9s --context gke_orca-205614_europe-west1_polaris"
