@@ -15,6 +15,10 @@ bindkey '^H' backward-kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# activate agent-forwarding
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa id_ed25519_ewx2
+
 # history
 HISTSIZE=20000
 SAVEHIST=20000
@@ -80,9 +84,6 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
-
-# activate agent-forwarding
-zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
