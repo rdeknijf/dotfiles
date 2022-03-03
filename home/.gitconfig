@@ -1,5 +1,5 @@
 [user]
-	email = rutger@deknijf.com
+	email = rutger.de.knijf@energyworx.org
 	name = Rutger de Knijf
 	signingkey = C9579456375E704F
 
@@ -19,3 +19,7 @@
 	gpgsign = true
 [gpg]
 	program = gpg
+[tag]
+	forceSignAnnotated = false
+[init]
+	defaultBranch = master
