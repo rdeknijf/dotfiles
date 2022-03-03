@@ -4,6 +4,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 export DISABLE_VENV_CD=1
 export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 export KUBECTX_IGNORE_FZF=1  # tmp fix until https://github.com/junegunn/fzf/issues/1486 is merged
+export CLOUDSDK_PYTHON=python3.9
  
 # display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -24,6 +25,14 @@ HISTSIZE=20000
 SAVEHIST=20000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="yyyy-mm-dd"
+
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 
 # zplug
 if [[ ! -d ~/.zplug ]]; then
@@ -64,12 +73,16 @@ zplug "plugins/web-search", from:oh-my-zsh
 zplug "plugins/ansible", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/zsh-autosuggestions", from:oh-my-zsh
+zplug "plugins/fasd", from:oh-my-zsh
 #zplug "plugins/npm", from:oh-my-zsh
+
 
 zplug "superbrothers/zsh-kubectl-prompt"
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "pinelibg/dircolors-solarized-zsh"
+zplug "wookayin/fzf-fasd"
+
 
 zplug "lukechilds/zsh-nvm"
 
