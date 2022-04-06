@@ -4,7 +4,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 export DISABLE_VENV_CD=1
 export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 export KUBECTX_IGNORE_FZF=1  # tmp fix until https://github.com/junegunn/fzf/issues/1486 is merged
-export CLOUDSDK_PYTHON=python3.9
+#export CLOUDSDK_PYTHON=python3.9
  
 # display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -21,8 +21,8 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa id_ed25519_ewx2
 
 # history
-HISTSIZE=20000
-SAVEHIST=20000
+HISTSIZE=1000000
+SAVEHIST=1000000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="yyyy-mm-dd"
 
@@ -32,7 +32,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
-
+setopt INC_APPEND_HISTORY
 
 # zplug
 if [[ ! -d ~/.zplug ]]; then
