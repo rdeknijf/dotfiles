@@ -78,6 +78,7 @@ zplug "plugins/fasd", from:oh-my-zsh
 
 
 zplug "superbrothers/zsh-kubectl-prompt"
+zplug "ocadaruma/zsh-gcloud-prompt"
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "pinelibg/dircolors-solarized-zsh"
@@ -103,7 +104,7 @@ if [[ ! $TERM =~ screen ]]; then
 fi
 
 # kubectl context prompt
-RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
+RPROMPT='%{$fg[blue]%}($ZSH_GCLOUD_PROMPT $ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
