@@ -22,3 +22,5 @@ vault_pass.txt
 .tox
 .coverage
 .scannerwork
+.nox
+.gitlab-ci-local

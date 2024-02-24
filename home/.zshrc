@@ -1,10 +1,19 @@
+#zmodload zsh/zprof
+
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
+
 #exports
 export EDITOR=vim
 export WORKON_HOME=$HOME/.virtualenvs
 export DISABLE_VENV_CD=1
 export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 export KUBECTX_IGNORE_FZF=1  # tmp fix until https://github.com/junegunn/fzf/issues/1486 is merged
-#export CLOUDSDK_PYTHON=python3.9
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export DOCKER_BUILDKIT=1
  
 # display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -16,7 +25,6 @@ bindkey '^H' backward-kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-# activate agent-forwarding
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa id_ed25519_ewx2
 
@@ -43,7 +51,7 @@ fi
 source ~/.zplug/init.zsh
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
-# plugins
+#zplug romkatv/powerlevel10k, as:theme, depth:1
 zplug "robbyrussell/oh-my-zsh"
 zplug "themes/ys", from:oh-my-zsh
 
@@ -71,18 +79,18 @@ zplug "plugins/helm", from:oh-my-zsh
 zplug "plugins/systemd", from:oh-my-zsh
 zplug "plugins/web-search", from:oh-my-zsh
 zplug "plugins/ansible", from:oh-my-zsh
-zplug "plugins/fzf", from:oh-my-zsh
+#zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/zsh-autosuggestions", from:oh-my-zsh
 zplug "plugins/fasd", from:oh-my-zsh
 #zplug "plugins/npm", from:oh-my-zsh
-
+zplug "plugins/poetry", from:oh-my-zsh
 
 zplug "superbrothers/zsh-kubectl-prompt"
-zplug "ocadaruma/zsh-gcloud-prompt"
-zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
+#zplug "ocadaruma/zsh-ghcloud-prompt"
+#zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "pinelibg/dircolors-solarized-zsh"
-zplug "wookayin/fzf-fasd"
+#zplug "wookayin/fzf-fasd"
 
 
 zplug "lukechilds/zsh-nvm"
@@ -99,6 +107,11 @@ fi
 
 zplug load
 
+
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
+
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
@@ -107,6 +120,26 @@ fi
 RPROMPT='%{$fg[blue]%}($ZSH_GCLOUD_PROMPT $ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+eval "$(mcfly init zsh)"
 
 [ -f ~/.alias ] && source ~/.alias
 [ -f ~/.path ] && source ~/.path
+
+#export PATH="$HOME/.poetry/bin:$PATH"
+
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# Created by `pipx` on 2022-12-17 14:47:02
+export PATH="$PATH:/home/rdeknijf/.local/bin"
+
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
+
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
+#zprof

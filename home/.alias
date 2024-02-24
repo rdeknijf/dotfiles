@@ -53,6 +53,9 @@ alias tfdy='terraform destroy -auto-approve'
 alias tfinu='terraform init -upgrade'
 alias tfpde='terraform plan --destroy'
 
+# Poetry
+alias pisd='poetry install --sync --with=dev'
+
 
 dkp() {
   if [ ! -f .dockerignore ]; then
@@ -63,5 +66,11 @@ dkp() {
   docker build -t $1 .
   docker push $1
 }
+
+drun() {
+    docker run -it --rm "$1" /bin/bash
+    echo "$1"
+}
+
 
 
